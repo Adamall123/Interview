@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
+
+    <style>
+        .form-control {
+        background-color: #f8f5f5;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{{asset('assets/css/fontawesome.min.css')}}">
+
+    {% block customstylesheets %}{% endblock %}
+
+    <title>{% block title %}Zadanie rekrutacyjne {% endblock %}</title>
+
+</head>
+
+<body class="text-center">
+    <div class="container">
+        {% block menu %}
+        <nav >
+         <a class="p-2" href="{{path('main')}}">Strona główna</a>
+            <a class="p-2" href="{{path('app_exchange_rates')}}">Przelicz</a>
+            <a class="p-2" href="{{path('app_exchange_rates_date')}}">Różnica</a>
+        </nav>
+        {% endblock %}
+        {% block body %}
+        <div class="card border-dark mb-3" >
+        <div class="card-body">
+            <h5 class="card-title">Strona główna</h5>
+            <p class="card-text">Aby wyświetlić działanie zadania nr 1 naciśnij  <a class="p-2 text-dark" href="{{path('app_exchange_rates')}}">Przelicz</a>.</p>
+            <p class="card-text">Aby wyświetlić działanie zadania nr 2 naciśnij <a class="p-2 text-dark" href="{{path('app_exchange_rates_date')}}">Różnica</a>.</p>
+            <p>Przyciski te znajdują się na górze jako nawigacja. </p>
+        </div>
+        </div>
+       	</div> 
+        {% endblock %}
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{asset('assets/js/jquery.js')}}"></script>
+<script src="{{asset('assets/js/popper.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.js')}}"></script>
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+{% block customjavascript %}{% endblock %}
+</body>
+</html>
